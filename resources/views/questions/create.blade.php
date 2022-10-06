@@ -22,9 +22,8 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <textarea class="d-block" style="resize: auto" type="text" name="body" id="body">
-                                    {{ old('body') }}
-                                </textarea>
+                                <input id="body" type="hidden" name="body" value="{{ old('body') }}">
+                                <trix-editor input="body"></trix-editor>
                                 @error('body')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -44,4 +43,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.js"></script>
 @endsection
 
-
+@section('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.css">
+@endsection
